@@ -24,6 +24,16 @@ Zeigt z.B. alle Details zur VM mit dem Namen "u20Gnome" an.
 `VBoxManage.exe snapshot u20Gnome list`  
 Zeigt die vorhandenen Sicherungspunkte der VM "u20Gnome" an.
 
+### VM starten
+`VBoxManage.exe startvm u20Gnome`  
+Startet die VM u20Gnome.  
+*Mein Problem ist, das ich diese VM bei der letzten Nutzung nicht ausgeschaltet bzw. heruntergefahren, sondern nur angehalten habe. Duch das Update auf Windows 11, das herumspielen mit WSL2 und WSLg und das Update von VirtualBox von 6.1.26 auf 6.1.28 startet meine VM nicht mehr. Ich bekomme folgende Fehlermeldung:*  
+``` 
+Waiting for VM "u20GUI" to power on...  
+VBoxManage.exe: error: apic#0: Config mismatch - uApicMode: saved=3 config=2 [ver=5 pass=final] (VERR_SSM_LOAD_CONFIG_MISMATCH)  
+VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole  
+```
+
 ### eine neue Maschine aus einem vorhandenen Snapshot clonen
 `VBoxManage.exe clonevm u20Gnome --name="u20GUI" --register --snapshot="Sicherungspunkt 2"`  
 Erstellt einen Clone vom "Sicherungspunkt 2" der vorhandenen VM "u20Gnome" mit dem neuen Namen "u20GUI".  

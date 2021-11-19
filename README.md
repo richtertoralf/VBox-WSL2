@@ -7,9 +7,9 @@ VBox Problemumgehungen - Arbeiten auf der Kommandozeile / Windows cmd
 
 ```
 Der Pfad zu VirtualBox auf meiner Microsoft Windows 11 Maschine:  
-C:\Program Files\Oracle\VirtualBox>
+C:\Program Files\Oracle\VirtualBox
 also zuerst:  
-cd Program Files\Oracle\VirtualBox>
+cd Program Files\Oracle\VirtualBox
 ```
 
 ### Anzeigen der vorhandenen Maschinen

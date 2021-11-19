@@ -33,6 +33,8 @@ Waiting for VM "u20GUI" to power on...
 VBoxManage.exe: error: apic#0: Config mismatch - uApicMode: saved=3 config=2 [ver=5 pass=final] (VERR_SSM_LOAD_CONFIG_MISMATCH)  
 VBoxManage.exe: error: Details: code E_FAIL (0x80004005), component ConsoleWrap, interface IConsole  
 ```
+*In den Foren heißt es dazu:  
+Dieser Fehler wird verursacht durch das Upgrade von VirtualBox, während einige VMs angehalten wurden. Sie müssen zur vorherigen VirtualBox-Version zurückkehren, um den gespeicherten Zustand dieser VMs zu verwerfen.*  
 
 ### eine neue Maschine aus einem vorhandenen Snapshot clonen
 `VBoxManage.exe clonevm u20Gnome --name="u20GUI" --register --snapshot="Sicherungspunkt 2"`  

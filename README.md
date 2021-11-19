@@ -15,3 +15,15 @@ cd Program Files\Oracle\VirtualBox>
 ### Anzeigen der vorhandenen Maschinen
 `VBoxManage.exe list vms`  
 Listet alle virtuellen Maschinen auf, die derzeit bei Oracle VM VirtualBox registriert sind. Standardmäßig wird hier eine kompakte Liste mit dem Namen und der UUID jeder VM angezeigt.
+
+### Details zu einer VM anzeigen
+`VBoxManage.exe showvminfo u20Gnome`  
+Zeigt z.B. alle Details zur VM mit dem Namen "u20Gnome" an.  
+
+### Snapshots einer VM anzeigen
+`VBoxManage.exe snapshot u20Gnome list`  
+Zeigt die vorhandenen Sicherungspunkte der VM "u20Gnome" an.
+
+### eine neue Maschine aus einem vorhandenen Snapshot clonen
+`VBoxManage.exe clonevm u20Gnome --name="u20GUI" --register --snapshot="Sicherungspunkt 2"`  
+Erstellt einen Clone vom "Sicherungspunkt 2" der vorhandenen VM "u20Gnome" mit dem neuen Namen "u20GUI".  

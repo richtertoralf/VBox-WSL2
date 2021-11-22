@@ -25,6 +25,8 @@ Zeigt z.B. alle Details zur VM mit dem Namen "u20Gnome" an.
 Zeigt die vorhandenen Sicherungspunkte der VM "u20Gnome" an.
 
 ### VM starten
+` C:\Program Files\Oracle\VirtualBox> .\VBoxManage.exe startvm d11r1 --type headless`  
+Startet die Virtuelle Maschine mitdemNamen "d11r1" ohne GUI (--type Headless). Der Zugriff erfolgt dann z.B. per SSH.  
 `VBoxManage.exe startvm u20Gnome`  
 Startet die VM u20Gnome.  
 *Mein Problem ist, das ich diese VM bei der letzten Nutzung nicht ausgeschaltet bzw. heruntergefahren, sondern nur angehalten habe. Duch das Update auf Windows 11, das herumspielen mit WSL2 und WSLg und das Update von VirtualBox von 6.1.26 auf 6.1.28 startet meine VM nicht mehr. Ich bekomme folgende Fehlermeldung:*  

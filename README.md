@@ -1,4 +1,6 @@
 # Oracle® VM VirtualBox und Windows 11 - WSL2
+>Oracle VM VirtualBox und Microsofts WSL (Windows-Subsystem für Linux) nutzen unterschiedliche Virtualisierer, die sich aktuell nicht wirklich gut vertragen.  
+
 VBox Problemumgehungen - Arbeiten auf der Kommandozeile / Windows cmd  
 * Mein Rechner hat sein Update auf Windows 11 erhalten. Dann habe ich zwei Tage WSL1, WSL2 und WSLg getestet. Noch nicht perfekt, aber brauchbar :-)  
 * Dann wollte ich meine virtuellen Maschinen über Oracle VirtualBox wieder starten ... aber VBox funktionierte nicht mehr. Auch ein Update auf VBox 6.1.28 brachte nichts.  
@@ -10,8 +12,10 @@ Der Pfad zu VirtualBox auf meiner Microsoft Windows 11 Maschine:
 C:\Program Files\Oracle\VirtualBox
 also zuerst:  
 cd "\Program Files\Oracle\VirtualBox"
+# alternativ als Admin in der Powershell:
+PS C:\WINDOWS\system32> $env:PATH = $env:PATH + ";C:\Program Files\Oracle\VirtualBox" 
 ```
-
+# VBox über die Komandozeile managen
 ### Anzeigen der vorhandenen Maschinen
 `VBoxManage.exe list vms`  
 Listet alle virtuellen Maschinen auf, die derzeit bei Oracle VM VirtualBox registriert sind. Standardmäßig wird hier eine kompakte Liste mit dem Namen und der UUID jeder VM angezeigt.
@@ -41,3 +45,8 @@ Dieser Fehler wird verursacht durch das Upgrade von VirtualBox, während einige 
 ### eine neue Maschine aus einem vorhandenen Snapshot clonen
 `VBoxManage.exe clonevm u20Gnome --name="u20GUI" --register --snapshot="Sicherungspunkt 2"`  
 Erstellt einen Clone vom "Sicherungspunkt 2" der vorhandenen VM "u20Gnome" mit dem neuen Namen "u20GUI".  
+
+### mehrere NIC erstellen
+PS C:\WINDOWS\system32> VBoxManage.exe modifyvm 3d11r --nic5 intnet --intnet5 300e4  
+Fügt der virtuellen Maschine "3d11r" eine fünfte Netzwerkinterfacekarte als "internes Netzwerk" für das interne Netzwerk "300e4" hinzu.
+Von mir genutzt, um einen virtuellen Router mit fünf Netzwerkinterfaces zu bauen.   

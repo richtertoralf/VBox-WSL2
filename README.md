@@ -11,9 +11,11 @@ VBox Problemumgehungen - Arbeiten auf der Kommandozeile / Windows cmd
 Der Pfad zu VirtualBox auf meiner Microsoft Windows 11 Maschine:  
 C:\Program Files\Oracle\VirtualBox
 also zuerst:  
-cd "\Program Files\Oracle\VirtualBox"
+cd "\Program Files\Oracle\VirtualBox"  
+# dann kann in diesem Verzeichnis VBoxManger.exe aufgerufen werden.
 # alternativ als Admin in der Powershell:
-PS C:\WINDOWS\system32> $env:PATH = $env:PATH + ";C:\Program Files\Oracle\VirtualBox" 
+PS C:\WINDOWS\system32> $env:PATH = $env:PATH + ";C:\Program Files\Oracle\VirtualBox"  
+# danach funktioniert der Aufruf des VBoxManager in der cmd auch aus anderen Verzeichnissen heraus.  
 ```
 # VBox über die Komandozeile managen
 ### Anzeigen der vorhandenen Maschinen
@@ -47,6 +49,6 @@ Dieser Fehler wird verursacht durch das Upgrade von VirtualBox, während einige 
 Erstellt einen Clone vom "Sicherungspunkt 2" der vorhandenen VM "u20Gnome" mit dem neuen Namen "u20GUI".  
 
 ### mehrere NIC erstellen
-PS C:\WINDOWS\system32> VBoxManage.exe modifyvm 3d11r --nic5 intnet --intnet5 300e4  
+`PS C:\WINDOWS\system32> VBoxManage.exe modifyvm 3d11r --nic5 intnet --intnet5 300e4`  
 Fügt der virtuellen Maschine "3d11r" eine fünfte Netzwerkinterfacekarte als "internes Netzwerk" für das interne Netzwerk "300e4" hinzu.
 Von mir genutzt, um einen virtuellen Router mit fünf Netzwerkinterfaces zu bauen.   
